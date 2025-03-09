@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import BookCover from './BookCover'
 
 const Bookoverview = ({title,author,genre,rating,total_copies,available_copies,description,cover,color}:Book) => {
   return <section className='book-overview'>
@@ -36,7 +37,35 @@ const Bookoverview = ({title,author,genre,rating,total_copies,available_copies,d
                     </p>
                 </div>
 
-                
+                <p className='book-description'>
+                    {description}
+                </p>
+
+                <button className="flex items-center justify-center gap-2 px-4 py-2 bg-yellow-700 text-white rounded-lg shadow-md hover:bg-yellow-600 transition-all duration-300">
+  <Image width={30} height={30} alt="book" src="/icons/book.svg" />
+  <p className="font-bebas-neue text-xl">Borrow Book</p>
+</button>
+
+        </div>
+
+        <div className='relative flex flex-1 justify-center'>
+                <div className='relative'>
+                        <BookCover
+                            varient="wide"
+                            coverColor={color}
+                            coverImage={cover}
+                            className="z-10"
+                        />
+
+                        <div className='absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden'>
+                            <BookCover
+                                varient="wide"
+                                coverColor={color}
+                                coverImage={cover}
+                                className="z-10"
+                            />
+                        </div>
+                </div>
         </div>
   </section>
 }

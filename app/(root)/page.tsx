@@ -2,7 +2,7 @@ import Booklist from "@/components/Booklist";
 import Bookoverview from "@/components/Bookoverview";
 // import { Button } from "@/components/ui/button";
 // import Image from "next/image";
-import { sampleBooks } from "@/constaint";
+import { sampleBooks } from "@/constant";
 
 const Home = ()  => {
   return (
